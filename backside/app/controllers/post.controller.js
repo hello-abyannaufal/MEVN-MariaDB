@@ -109,7 +109,7 @@ exports.kill = (req, res) => {
 exports.purge = (req, res) => {
     Post.destroy({
         where: {},
-        truncate: false // If true, the id restarted to 1 when create post
+        truncate: true // If true, the id restarted to 1 when create post
     }).then((result) => {
         res.send({
             message: `${result} Posts were deleted successfully`

@@ -6,7 +6,7 @@
                 <div class="input-group mb-3">
                     <input type="text" class="form-control">
                     <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button">Search</button>
+                        <button class="btn btn-outline-secondary mx-2" type="button">Search</button>
                     </div>
                 </div>
             </div>
@@ -27,6 +27,11 @@
                     </div>
                 </div>
 
+                                
+                <a class="btn btn-sm btn-success m-3" href="/add" role="button">
+                    Add Book
+                </a>
+                
                 <button class="btn btn-sm btn-danger m-3">
                     Remove All
                 </button>
