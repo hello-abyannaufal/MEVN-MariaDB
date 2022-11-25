@@ -23,7 +23,7 @@
                         <h5 class="card-title">{{ post.title }}</h5>
                         <h6 class="card-text mb-2 text-mute"> {{ post.published ? 'Publish' : 'Unpublished' }}</h6>
                         <p class="card-text">{{ post.description }}</p>
-                        <a href="#" class="card-link">Edit</a>
+                        <a :href="'list/' + post.id" class="card-link">Edit</a>
                     </div>
                 </div>
 
@@ -32,7 +32,7 @@
                     Add Book
                 </a>
                 
-                <button class="btn btn-sm btn-danger m-3">
+                <button @click="deleteAll()" class="btn btn-sm btn-danger m-3">
                     Remove All
                 </button>
 
@@ -63,6 +63,15 @@ export default {
             }).catch((err) => {
                 console.log(err)
             })
+        },
+
+        deleteAll() {
+            PostService.purgePosts()
+                .then((result) => {
+                    console.log(result)
+                }).catch((err) => {
+                    console.log(err)
+                })
         }
     },
 

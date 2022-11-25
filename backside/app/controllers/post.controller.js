@@ -4,6 +4,8 @@ const Op = db.Sequelize.Op
 
 // Create
 exports.create = (req, res) => {
+    console.log(req.body)
+
     // Validate request
     if(!req.body.title) {
         res.status(400).send({
@@ -112,7 +114,7 @@ exports.purge = (req, res) => {
         truncate: true // If true, the id restarted to 1 when create post
     }).then((result) => {
         res.send({
-            message: `${result} Posts were deleted successfully`
+            message: `Posts were deleted successfully`
         })
     }).catch((err) => {
         res.status(500).send({
